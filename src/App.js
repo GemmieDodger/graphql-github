@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+// import fetchGraphQL from './fetchGraphQL';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import UserDetail from './views/UserDetail';
+import Profile from './views/Profile';
 
+
+// EXPLORER: https://docs.github.com/en/graphql/overview/explorer
+//repository(owner: "gemmiedodger" name: "boathook") {
+ // name
+//}
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+return(
+  <Router>
+          <Switch>
+            <Route exact path="/">
+              <Profile /> 
+            </Route>
+            <Route exact path="/UserDetail">
+              <UserDetail />
+            </Route>
+          </Switch>
+  </Router>
+  )
 }
 
 export default App;
